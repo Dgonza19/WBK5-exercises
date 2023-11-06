@@ -10,7 +10,7 @@ let cart = [
     { item: "Apples", price: 0.66, quantity: 6 }
 ];
 
-// Write code that searches the courses array using map() function to 
+//a. Write code that searches the courses array using map() function to 
 //return only the item name and then use forEach() to display the list of items.
 
 function findItemName(items){
@@ -26,13 +26,13 @@ let itemList = cart.map(findItemName); itemList.forEach(displayItem)
 console.log("----------------------------------------------------")
 
 
-//Write code that determines the total cost of everything in the cart using reduce().
+//b. Write code that determines the total cost of everything in the cart using reduce().
 //In the reducer function, remmeber to account for the possibility of there being
 // more than 1 unit(ex: 5 apples rather than 1)!
 
 function getTotalCost(totalCost, cartItems) {
   return totalCost + (cartItems.price * cartItems.quantity);
-}
+};
 
 let itemsSum = cart.reduce(getTotalCost, 0);
 
@@ -40,7 +40,7 @@ console.log(`Total cost of the ccart is $${itemsSum}`);
 
 console.log("----------------------------------------------------")
 
-//Revisit your code for (a) above. Can you sort the list before you display it?
+//c. Revisit your code for (a) above. Can you sort the list before you display it?
 
 //this is to sort the list
 cart.sort(function(a, b){
@@ -49,8 +49,9 @@ cart.sort(function(a, b){
   else return 1;
 });
 
+//display
 let numCartItems = cart.length;
 for (let i = 0; i < numCartItems; i++) {
     console.log("Item: " + cart[i].item + ", Price: " + cart[i].price + ", Quantity: " + cart[i].quantity)
-}
+};
 
